@@ -1,0 +1,36 @@
+### Local settings include file #############################################
+#                                                              vim: ft=dosini
+#
+# This is installed by Ansible, but gets never overwritten,
+# unless you do so in a custom playbook.
+#
+# Add anything of your own here, or remove the examples you do not need.
+# A better way to add your own *additional* settings is to create new
+# files in the "rtorrent.d" directory.
+
+# Throttles
+throttle.up = kb500, 500
+throttle.up = onemb, 1024
+throttle.up = lo_up, 2048
+# throttle.ip = lo_up, some.domain.name
+# or rtxmlrpc throttle.ip=,lo_up,some.domain.name
+
+# NETWORK: Unwanted peers
+##ipv4_filter.add_address = 1.2.3.666, unwanted
+
+# Reduce retention period of uncompressed logs
+pyro.log_archival.days.set = 1
+
+# Enable XMLRPC logging
+##pyro.log.xmlrpc.enabled.set = 1
+
+# General logging
+#
+#   Levels = critical error warn notice info debug
+#   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
+#
+# The 'log' channel used here is defined in "rtorrent.d/15-logging.rc"!
+log.add_output = "info", "log"
+##log.add_output = "tracker_debug", "log"
+
+### END of local settings ###################################################
