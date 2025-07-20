@@ -1,3 +1,10 @@
+TODO:
+- add rtorrent-ps
+- fully un-hard-code configs 
+- sane defaults for the pyro configs
+
+
+# Original readme:
 <p align="center"><a href="https://github.com/crazy-max/docker-rtorrent-rutorrent" target="_blank"><img height="128" src="https://raw.githubusercontent.com/crazy-max/docker-rtorrent-rutorrent/master/.github/docker-rtorrent-rutorrent.jpg"></a></p>
 
 <p align="center">
