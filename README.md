@@ -2,6 +2,7 @@ TODO:
 - add rtorrent-ps
 - fully un-hard-code configs 
 - sane defaults for the pyro configs
+- auto reattach when ssh into image
 
 
 # Original readme:

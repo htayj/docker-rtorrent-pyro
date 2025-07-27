@@ -210,7 +210,7 @@ RUN PATH="/opt/python2/bin:$PATH" && ls /opt && mkdir -p bin .local && \
     bash ./update-to-head.sh "/opt/python2/bin/python" && \
 		cp -r /opt/pyrocore $DIST_PATH/opt/pyrocore && \
 		mkdir $DIST_PATH/bin && \
-		ln -s /opt/pyrocore/.local/pyroscope/bin/* $DIST_PATH/bin/
+		cp /opt/pyrocore/.local/pyroscope/bin/* $DIST_PATH/bin/
 		
 
 FROM crazymax/alpine-s6:${ALPINE_S6_VERSION}

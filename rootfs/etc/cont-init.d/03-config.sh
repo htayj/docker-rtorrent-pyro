@@ -80,9 +80,6 @@ set -e
 # rTorrent
 curl --fail -H "Content-Type: text/xml" -d "<?xml version='1.0'?><methodCall><methodName>system.api_version</methodName></methodCall>" http://127.0.0.1:${XMLRPC_HEALTH_PORT}
 
-# ruTorrent / PHP
-curl --fail http://127.0.0.1:${RUTORRENT_HEALTH_PORT}/ping
-
 # WebDAV
 curl --fail http://127.0.0.1:${WEBDAV_HEALTH_PORT}
 EOL
@@ -132,12 +129,11 @@ fi
 # rTorrent config
 echo "Checking rTorrent configuration..."
 if [ ! -f /data/rtorrent/.rtorrent.rc ]; then
-  echo "  Creating default configuration..."
+  echo "  Creating default configuration( .rtorrent.rc )..."
   cp /tpls/.rtorrent.rc /data/rtorrent/.rtorrent.rc
-  cp /tpls/_rtlocal.rc /data/rtorrent/_rtlocal.rc
 fi
 if [ ! -f /data/rtorrent/_rtlocal.rc  ]; then
-  echo "  Creating default configuration..."
+  echo "  Creating default configuration ( _rtlocal.rc )..."
   cp /tpls/_rtlocal.rc /data/rtorrent/_rtlocal.rc
 fi
 chown rtorrent:rtorrent /data/rtorrent/.rtorrent.rc

@@ -11,9 +11,10 @@ with-contenv
 s6-setuidgid ${PUID}:${PGID}
 EOL
 if [ -z "${WAN_IP}" ]; then
-  echo "screen -d -m rtorrent -D -o import=/etc/rtorrent/.rtlocal.rc" >> /etc/services.d/rtorrent/run
+  echo "screen -e ^tt -d -m rtorrent -o import=/etc/rtorrent/.rtlocal.rc" >> /etc/services.d/rtorrent/run
 else
-  echo "screen -d -m rtorrent -D -o import=/etc/rtorrent/.rtlocal.rc -i ${WAN_IP}" >> /etc/services.d/rtorrent/run
+  echo "screen -e ^tt -d -m rtorrent -i -o import=/etc/rtorrent/.rtlocal.rc ${WAN_IP}" >> /etc/services.d/rtorrent/run
 fi
-
+#-o import=/etc/rtorrent/.rtlocal.rc
+#echo "tail -f /data/rtorrent/logs/rtorrent.log" >> /etc/services.d/rtorrent/run
 chmod +x /etc/services.d/rtorrent/run
